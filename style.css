@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Medula+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-family: 'Medula One', cursive;
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 65.52px;
+  }
+  
+  .text-left {
+    margin-top: 60px; /* Ajuste o valor conforme necessário */
+    
+  }
+  
+  .text-left a {
+    font-family: 'Alumni Sans', sans-serif;
+    color: #000000; /* Cor preta */
+    margin-bottom: 10px; /* Ajuste o valor conforme necessário */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  }
+
+  .text-right {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 50px;
+  }
+  
+  .text-right a {
+    color: black;
+  }
+  
+  .text-right input[type="text"] {
+    width: calc(100% - 120px); /* Substitua 100px pelo valor adequado */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    padding-right: 30px; /* Espaço para o ícone de lupa */
+    background-image: url("https://fonts.gstatic.com/s/i/materialicons/search/v14/24px.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 20px 20px; /* Ajuste o tamanho do ícone conforme necessário */
+  }
+  
+  h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+
+  }
+  h3 {
+    font-family: "Roboto", Arial, sans-serif;
+  }
+
+  .col.text-center {
+    margin-top: 50px;
+  }
+
+  .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  .section-title {
+    font-family: 'Medula One', cursive;
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 65.52px;
+  }
+  
+  /* Estilização adicional */
+  #footer {
+    color: #fff;
+  }
