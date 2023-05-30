@@ -13,14 +13,14 @@ body {
   }
   
   .text-left {
-    margin-top: 60px; /* Ajuste o valor conforme necessário */
+    margin-top: 60px;
     
   }
   
   .text-left a {
     font-family: 'Alumni Sans', sans-serif;
-    color: #000000; /* Cor preta */
-    margin-bottom: 10px; /* Ajuste o valor conforme necessário */
+    color: #000000;
+    margin-bottom: 10px;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -31,7 +31,7 @@ body {
 
   .text-right {
     font-family: 'Alumni Sans', sans-serif;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0em;
@@ -44,13 +44,13 @@ body {
   }
   
   .text-right input[type="text"] {
-    width: calc(100% - 120px); /* Substitua 100px pelo valor adequado */
-    border-radius: 5px; /* Adiciona bordas arredondadas */
-    padding-right: 30px; /* Espaço para o ícone de lupa */
+    width: calc(100% - 139px);
+    border-radius: 5px;
+    padding-right: 30px;
     background-image: url("https://fonts.gstatic.com/s/i/materialicons/search/v14/24px.svg");
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: 20px 20px; /* Ajuste o tamanho do ícone conforme necessário */
+    background-size: 20px 20px;
   }
   
   h2 {
@@ -86,6 +86,78 @@ body {
   }
   
   /* Estilização adicional */
+  
+  .section-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    padding: 10px;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 17px;
+    margin-top: -3px;
+}
+
+.card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+  #secao {
+    text-align: left;
+  }
+
+  #contactInput {
+    width: 68%;
+    border-radius: 10px;
+  }
+
+  #form-submit {
+    background-color: #000000;
+    border-radius: 10px;
+    border: none;
+  }
+
+  #privacy {
+    font-size: 13.5px;
+  }
+  
   #footer {
     color: #fff;
+  }
+
+  footer h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+
+  .list-unstyled li a {
+    color:#fff;
+  }
+
+  .list-unstyled li a:hover {
+    color: #000000;
+  }
+
+  #copy {
+    font-size: 13px;
   }

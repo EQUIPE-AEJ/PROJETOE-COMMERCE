@@ -6,26 +6,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Inter&family=Public+Sans:wght@200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-
-    #footer{
-      color: #ffff;
-    }
-
-    .section-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffff;
-    padding: 10px;
-    z-index: 2;
-    width: 100%;
-  }
-
-  </style>
+  
 </head>
 
 <body>
@@ -34,21 +17,23 @@
     <div class="container">
       <div class="row">
         <div class="col text-left">
-          <a href="#">Sobre Nós</a>
-          <a href="#">Quer Ajuda?</a>
-          <a href="#">Baixe nosso App</a>
+          <a href="#">sobre nós</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#">quer ajuda?</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#">baixe nosso app</a>
         </div>
         <div class="col text-center">
-          <h1>Style Hub</h1>
+          <h1>STYLE HUB</h1>
           <br>
           <br>
           <br>
         </div>
         <div class="col text-right">
           <span class="material-symbols-outlined">person</span>          
-          <a href="#" data-toggle="modal" data-target="#loginModal">Entre ou Cadastre-se</a>
+          <a href="#" data-toggle="modal" data-target="#loginModal">Entre ou cadastre-se</a>
           <span class="material-symbols-outlined">favorite</span>
           <span class="material-symbols-outlined">shopping_bag</span>
+          <br>
+          <br>
           <input id="buscar-input" type="text" placeholder="Buscar">
         </div>
       </div>
@@ -66,7 +51,7 @@
           <h3 class="section-title">MODA MASCULINA</h3>
         </div>
         <div class="col-md-4">
-          <a href="#"><img src="image/modafemininateste.jpg" alt="Moda Feminina"></a>
+          <a href="#"><img src="image/modafemininateste.jpeg" alt="Moda Feminina"></a>
           <h3 class="section-title">MODA FEMININA</h3>
         </div>
         <div class="col-md-4">
@@ -75,37 +60,45 @@
         </div>
       </div>
     </div>
+    <br>
+    <br>
   </section>
   
 
   <section>
     <div class="container text-center mt-4">
-      <h2>Benefícios Site + App</h2>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Frete Grátis a partir de R$199,00 no site</h3>
-          <p>Opção expressa para PE</p>
+        <h2>benefícios site + app</h2>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Frete Grátis a partir de R$199,00 no site</h3>
+                    <p>* opção expressa para PE</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <i class="fas fa-store"></i>
+                    <h3>Retire em loja em até 2 horas</h3>
+                    <p>* válido em todas as lojas, consulte a SH mais próxima</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <i class="fas fa-percent"></i>
+                    <h3>20% OFF na primeira compra no site</h3>
+                    <p>* cupom: PRIMEIRA20</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h3>Retire em loja em até 2 horas</h3>
-          <p>Válido em todas as lojas, consulte a SH mais próxima</p>
-        </div>
-        <div class="col-md-4">
-          <h3>20% OFF na primeira compra no site</h3>
-          <p>Cupom: PRIMEIRA20</p>
-          <br>
-          <br>
-          <br>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
   <section>
     <div class="container text-center mt-4">
-      <h2>Aproveite também</h2>
+      <h2 id="secao">APROVEITE TAMBÉM</h2>
       <br>
       <br>
       <div class="row">
@@ -124,24 +117,35 @@
             </div>
             </div>
               </section>
-                <div class="container text-center mt-4">
-                  <h2>Fique por dentro das novidades da Style Hub</h2>
-                  <p>Cadastre-se para receber: novidades, promoções, atualizações de estoque e muito mais, diretamente no seu e-mail</p>
-                  <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                      <input type="email" class="form-control mb-2" placeholder="Seu e-mail">
-                      <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="emailUpdates">
-                        <label class="form-check-label" for="emailUpdates">Receber por E-mail</label>
+              <br>
+              <br>
+              <br>
+              <div class="container text-left mt-4">
+                <div class="row">
+                  <div class="col-md-6 text-md-left">
+                    <h2>Fique por dentro das novidades da Style Hub</h2>
+                    <p>Cadastre-se para receber: novidades, promoções, atualizações de estoque e muito mais, diretamente no seu e-mail.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-10 offset-md-4">
+                        <h2>Receber atualizações por:</h2>
+                        <input type="text" id="contactInput" class="form-control mb-2" placeholder="Selecione uma opção">
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="checkbox" id="emailUpdates">
+                          <label class="form-check-label" for="emailUpdates">Receber por E-mail</label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="checkbox" id="smsUpdates">
+                          <label class="form-check-label" for="smsUpdates">Receber por SMS</label>
+                        </div>
+                        <button class="btn btn-primary" id="form-submit">CADASTRE-SE</button>
+                        <p id="privacy">Ao se cadastrar, você concorda com a nossa<br><a href="#">Política de privacidade.</a> Cancele a qualquer momento.</p>
                       </div>
-                      <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="smsUpdates">
-                        <label class="form-check-label" for="smsUpdates">Receber por SMS</label>
-                      </div>
-                      <button class="btn btn-primary">Cadastre-se</button>
-                      <p>Ao se cadastrar, você concorda com a nossa Política de privacidade. Cancele a qualquer momento.</p>
                     </div>
                   </div>
+                </div>
+              </div>              
                 </div>
               </section>
               <footer class="bg-dark text-center mt-4" id="footer">
@@ -159,6 +163,10 @@
                     </div>
                     <div class="col">
                       <h3>Formas de Pagamento</h3>
+                      <img src="image/visateste.png" alt="Visa">
+                      <img src="image/masterteste.png" alt="Master">
+                      <img src="image/boletoteste.png" alt="Boleto">
+                      <img src="image/pixteste.png" alt="Pix">
                     </div>
                     <div class="col">
                       <h3>Ajuda</h3>
@@ -171,12 +179,13 @@
                       </ul>
                     </div>
                     <div class="col">
-                      <h3>Baixe nosso App</h3>
+                      <h3>BAIXE NOSSO APP</h3>
+                      <img src="image/qrcode.png" alt="QR CODE">
                     </div>
                   </div>
                     <div class="row mt-4">
                      <div class="col">
-                        <p>© Style Hub - Todos os direitos reservados.</p>
+                        <p id="copy">© Style Hub - Todos os direitos reservados.</p>
                     </div>
                 </div>
               </footer>
@@ -193,11 +202,9 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="loginEmail">E-mail</label>
               <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu e-mail">
             </div>
             <div class="form-group">
-              <label for="loginPassword">Senha</label>
               <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha">
             </div>
             <div class="form-group form-check">
@@ -254,6 +261,7 @@
 </div>
 
 
+  <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
