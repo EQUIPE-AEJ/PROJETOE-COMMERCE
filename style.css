@@ -161,3 +161,163 @@ body {
   #copy {
     font-size: 13px;
   }
+
+  #loginModalLabel {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 10px;
+    /* Adicione outros estilos de fonte conforme necessário */
+  }
+  
+  #loginEmail,
+  #loginPassword {
+    width: 80%;
+    margin: 0 auto;
+    /* Ajuste a largura conforme necessário */
+  }
+
+  .modal-title {
+    text-align: center;
+  }
+  
+  .modal-content .header {
+    margin-top: 35px;
+    display:flexbox;
+    justify-content: space-between;
+  }
+  
+  .modal-content .header .modal-title {
+    font-family: 'Medula One', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .modal-content .header .close {
+    margin-bottom: 10px;
+    text-align:right;
+  }
+
+  .align-right {
+    text-align: right;
+  }
+  .align-center {
+    font-family: Alumni Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: right;
+    margin-right: 50px;
+  }
+  .forgot-pass{
+    color:#000000;
+  }
+
+  .align-center-2 {
+    font-family: Alumni Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    margin-top: 10px;
+
+    text-align: center;
+  }
+
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .float-left {
+    float: left;
+  }
+  
+  .btn-primary {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #000000;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    /* Ajuste a largura conforme necessário */
+  }
+  
+  .mt-2 {
+    margin-top: 2px;
+  }
+  
+  .btn-secondary {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: #387337;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    /* Ajuste a largura conforme necessário */
+  }
+
+  .footer-center {
+    font-family: Alumni Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    margin-top: 10px;
+    margin: 0 auto;
+
+    text-align: center;
+    align-items: center;
+  }
+
+  #signupModal .modal-title {
+    font-family: 'Medula One', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  #signupModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  #signupModal form {
+    margin-bottom: 20px;
+  }
+  
+  #signupModal form .form-group {
+    margin-bottom: 10px;
+  }
+  
+  #signupModal button.btn-primary {
+    width: 100%;
+  }
+  
+  #signupModal .footer-center {
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+  }

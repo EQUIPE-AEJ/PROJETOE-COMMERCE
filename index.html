@@ -193,31 +193,25 @@
   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">faça o login</h5>
+        <div class="header">
+          <h5 class="modal-title">faça o login</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form>
+          <form id="form-login">
             <div class="form-group">
               <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu e-mail">
             </div>
             <div class="form-group">
               <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha">
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="rememberMe">
-              <label class="form-check-label" for="rememberMe">Lembrar-me</label>
-            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Entrar</button>
-          <p>Não tem um cadastro? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal">Crie sua conta</a></p>
-          <p><a href="#">Esqueci minha senha</a></p>
-        </div>
+          <p class="align-center"><a class="forgot-pass" href="#">Esqueci minha senha</a></p>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+          <p class="align-center-2">Não tem um cadastro?</p>
+          <button href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal" type="button" class="btn btn-secondary">Crie sua conta</button>
+
       </div>
     </div>
   </div>
@@ -226,36 +220,26 @@
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
         <h5 class="modal-title" id="signupModalLabel">crie seu cadastro</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <form>
+        <form id="form-cadastro">
           <div class="form-group">
-            <label for="signupFirstName">Nome</label>
-            <input type="text" class="form-control" id="signupFirstName" placeholder="Digite seu nome">
+            <input type="text" class="form-control" id="signupFirstName" placeholder="Nome">
           </div>
           <div class="form-group">
-            <label for="signupLastName">Sobrenome</label>
-            <input type="text" class="form-control" id="signupLastName" placeholder="Digite seu sobrenome">
+            <input type="text" class="form-control" id="signupLastName" placeholder="Sobrenome">
           </div>
           <div class="form-group">
-            <label for="signupEmail">E-mail</label>
-            <input type="email" class="form-control" id="signupEmail" placeholder="Digite seu e-mail">
+            <input type="email" class="form-control" id="signupEmail" placeholder="E-mail">
           </div>
           <div class="form-group">
-            <label for="signupPassword">Senha</label>
-            <input type="password" class="form-control" id="signupPassword" placeholder="Digite sua senha">
+            <input type="password" class="form-control" id="signupPassword" placeholder="Senha">
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Criar conta</button>
-        <p>Já possui uma conta? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Faça login</a></p>
-      </div>
+        <button type="submit" class="btn btn-primary">Criar conta</button>
+        <p class="footer-center">Já possui uma conta? <a class="footer-center" href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Faça login</a></p>
     </div>
   </div>
 </div>
@@ -265,6 +249,47 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const formCadastro = document.querySelector('#formCadastro');
+    const formLogin = document.querySelector('#formLogin');
+
+    formCadastro.addEventListener('submit', (event) => {
+      event.preventDefault(); // Previnir o envio padrão do formulário
+    
+      // Verificar se o botão de envio pressionado é o de cadastro
+      if (event.submitter && event.submitter.id === 'btnCadastro') {
+        const nome = document.getElementById('signupFirstName').value;
+        const Sobrenome = document.getElementById('signupLastName').value;
+        const email = document.getElementById('signupEmail').value;
+        const senha = document.getElementById('signupPassword').value;
+      
+        const data = {
+          "Email": email,
+          "Senha": senha,
+          "Nome": nome,
+          "Sobrenome": Sobrenome
+        };
+
+        fetch('http://localhost:3308/cliente/cadastro', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Livro cadastrado com sucesso!');
+            form.reset();
+          } else {
+            throw new Error('Erro ao cadastrar livro!');
+          }
+        })
+        .catch(error => console.error(error));
+
+      }
+    });
+  </script>
 
 
               <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
