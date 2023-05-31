@@ -1,3 +1,5 @@
+/* Cadastro de novidades do site */
+
 const contactInput = document.getElementById('contactInput');
   const emailCheckbox = document.getElementById('emailUpdates');
   const smsCheckbox = document.getElementById('smsUpdates');

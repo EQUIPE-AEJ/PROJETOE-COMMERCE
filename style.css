@@ -132,6 +132,7 @@ body {
   }
 
   #form-submit {
+    width: calc(100% - 139px);
     background-color: #000000;
     border-radius: 10px;
     border: none;
@@ -169,17 +170,29 @@ body {
     padding: 10px;
     /* Adicione outros estilos de fonte conforme necessário */
   }
+
+  .modal-dialog {
+    max-width: 393px;
+    height: 500px;
+  }
   
   #loginEmail,
   #loginPassword {
     width: 80%;
     margin: 0 auto;
+    border-radius: 10px;
     /* Ajuste a largura conforme necessário */
   }
 
   .modal-title {
     text-align: center;
   }
+
+  #loginModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }  
   
   .modal-content .header {
     margin-top: 35px;
@@ -251,6 +264,8 @@ body {
     line-height: 24px;
     letter-spacing: 0em;
     text-align: center;
+    border: none;
+    border-radius: 10px;
 
     /* Ajuste a largura conforme necessário */
   }
@@ -270,8 +285,14 @@ body {
     line-height: 24px;
     letter-spacing: 0em;
     text-align: center;
+    border-radius: 10px;
     /* Ajuste a largura conforme necessário */
   }
+
+  .btn-secondary:hover {
+    background-color: green;
+  }
+
 
   .footer-center {
     font-family: Alumni Sans;
@@ -293,7 +314,6 @@ body {
     line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
-
     margin-top: 10px;
     text-align: center;
   }
@@ -320,4 +340,8 @@ body {
     text-align: center;
     margin-top: 10px;
     color: black;
+  }
+
+  .btn#button-create {
+    width: calc(100% - 139px);
   }

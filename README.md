@@ -1,4 +1,3 @@
-Atualizei o footer
-Cards de Benefícios
-Cadastro de e-mail
-Também adicionei uma página de js para algumas funcionalidades do site
+Foram feitas as mudanças na estilização do site como o professor sugeriu
+O modal de cadastro foi estilizado
+Alguns css foram adicionados inline no código html, não mexer

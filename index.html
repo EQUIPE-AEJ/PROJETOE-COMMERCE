@@ -63,38 +63,6 @@
     <br>
     <br>
   </section>
-  
-
-  <section>
-    <div class="container text-center mt-4">
-        <h2>benefícios site + app</h2>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Frete Grátis a partir de R$199,00 no site</h3>
-                    <p>* opção expressa para PE</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <i class="fas fa-store"></i>
-                    <h3>Retire em loja em até 2 horas</h3>
-                    <p>* válido em todas as lojas, consulte a SH mais próxima</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <i class="fas fa-percent"></i>
-                    <h3>20% OFF na primeira compra no site</h3>
-                    <p>* cupom: PRIMEIRA20</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
   <section>
     <div class="container text-center mt-4">
@@ -119,34 +87,65 @@
               </section>
               <br>
               <br>
-              <br>
-              <div class="container text-left mt-4">
-                <div class="row">
-                  <div class="col-md-6 text-md-left">
-                    <h2>Fique por dentro das novidades da Style Hub</h2>
-                    <p>Cadastre-se para receber: novidades, promoções, atualizações de estoque e muito mais, diretamente no seu e-mail.</p>
-                  </div>
-                  <div class="col-md-6">
+              <section>
+                <div class="container text-center mt-4">
+                    <h2>benefícios site + app</h2>
+                    <br>
+                    <br>
                     <div class="row">
-                      <div class="col-md-10 offset-md-4">
-                        <h2>Receber atualizações por:</h2>
-                        <input type="text" id="contactInput" class="form-control mb-2" placeholder="Selecione uma opção">
-                        <div class="form-check mb-2">
-                          <input class="form-check-input" type="checkbox" id="emailUpdates">
-                          <label class="form-check-label" for="emailUpdates">Receber por E-mail</label>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <i class="fas fa-shipping-fast"></i>
+                                <h3>Frete Grátis a partir de R$199,00 no site</h3>
+                                <p>* opção expressa para PE</p>
+                            </div>
                         </div>
-                        <div class="form-check mb-2">
-                          <input class="form-check-input" type="checkbox" id="smsUpdates">
-                          <label class="form-check-label" for="smsUpdates">Receber por SMS</label>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <i class="fas fa-store"></i>
+                                <h3>Retire em loja em até 2 horas</h3>
+                                <p>* válido em todas as lojas, consulte a SH mais próxima</p>
+                            </div>
                         </div>
-                        <button class="btn btn-primary" id="form-submit">CADASTRE-SE</button>
-                        <p id="privacy">Ao se cadastrar, você concorda com a nossa<br><a href="#">Política de privacidade.</a> Cancele a qualquer momento.</p>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <i class="fas fa-percent"></i>
+                                <h3>20% OFF na primeira compra no site</h3>
+                                <p>* cupom: PRIMEIRA20</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+            <div class="container text-left mt-4">
+              <div class="row">
+                <div class="col-md-6 text-md-left">
+                  <h2>Fique por dentro das novidades da Style Hub</h2>
+                  <p>Cadastre-se para receber: novidades, promoções, atualizações de estoque e muito mais, diretamente no seu e-mail.</p>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-10 offset-md-4">
+                      <h2>Receber atualizações por:</h2>
+                      <input type="text" id="contactInput" class="form-control mb-2" placeholder="Selecione uma opção">
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="emailUpdates">
+                        <label class="form-check-label" for="emailUpdates">Receber por E-mail</label>
                       </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="smsUpdates">
+                        <label class="form-check-label" for="smsUpdates">Receber por SMS</label>
+                      </div>
+                      <button class="btn btn-primary" id="form-submit">CADASTRE-SE</button>
+                      <p id="privacy">Ao se cadastrar, você concorda com a nossa<br><a href="#">Política de privacidade.</a> Cancele a qualquer momento.</p>
                     </div>
                   </div>
                 </div>
-              </div>              
-                </div>
+              </div>
+            </div>
+              </div>
               </section>
               <footer class="bg-dark text-center mt-4" id="footer">
                 <div class="container">
@@ -220,26 +219,26 @@
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-        <h5 class="modal-title" id="signupModalLabel">crie seu cadastro</h5>
+        <h5 class="modal-title" id="signupModalLabel" style="margin-bottom: 9.5px; margin-top: 35px;">crie seu cadastro</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         <form id="form-cadastro">
           <div class="form-group">
-            <input type="text" class="form-control" id="signupFirstName" placeholder="Nome">
+            <input type="text" class="form-control" id="signupFirstName" style="width: calc(100% - 139px); margin: auto; display: block; border-radius: 10px; margin-bottom: 15.6px;" placeholder="Nome">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="signupLastName" placeholder="Sobrenome">
+            <input type="text" class="form-control" id="signupLastName" style="width: calc(100% - 139px); margin: auto; display: block; border-radius: 10px; margin-bottom: 15.6px;" placeholder="Sobrenome">
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" id="signupEmail" placeholder="E-mail">
+            <input type="email" class="form-control" id="signupEmail" style="width: calc(100% - 139px); margin: auto; display: block; border-radius: 10px; margin-bottom: 15.6px;" placeholder="E-mail">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="signupPassword" placeholder="Senha">
+            <input type="password" class="form-control" id="signupPassword" style="width: calc(100% - 139px); margin: auto; display: block; border-radius: 10px; margin-bottom: 15.6px;" placeholder="Senha">
           </div>
         </form>
-        <button type="submit" class="btn btn-primary">Criar conta</button>
-        <p class="footer-center">Já possui uma conta? <a class="footer-center" href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Faça login</a></p>
+        <button type="submit" class="btn btn-primary" id="button-create" style="width: calc(100% - 139px);">Criar conta</button>
+        <p class="footer-center" style="margin-bottom: 43px;">Já possui uma conta? <a class="footer-center" href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Faça login</a></p>
     </div>
   </div>
 </div>
