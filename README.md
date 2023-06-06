@@ -1,3 +1,2 @@
-Foram feitas as mudanças na estilização do site como o professor sugeriu
-O modal de cadastro foi estilizado
-Alguns css foram adicionados inline no código html, não mexer
+Foi adicionada a página de Moda Masculina com 6 itens
+Foi adicionado o swiper-slide no topo da página

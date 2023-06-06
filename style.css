@@ -1,6 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Medula+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&display=swap');
 
+
+/* swiper-slide */
+
+.swiper-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 33px; /* Ajuste a altura conforme necessário */
+  z-index: 999; /* Ajuste a ordem de sobreposição conforme necessário */
+}
+
+.swiper-slide:nth-child(1) {
+  background-color: #B39EB5; /* Cor pastel 1 */
+}
+
+.swiper-slide:nth-child(2) {
+  background-color: #F0A6CA; /* Cor pastel 2 */
+}
+
+.swiper-slide:nth-child(3) {
+  background-color: #FFCF9C; /* Cor pastel 3 */
+}
+
+.swiper-slide:nth-child(4) {
+  background-color: #B2D8D8; /* Cor pastel 4 */
+}
+
+.swiper-slide:nth-child(5) {
+  background-color: #C6C4A2; /* Cor pastel 5 */
+}
+
+.swiper-slide:nth-child(6) {
+  background-color: #C1F8E0; /* Cor pastel 6 */
+}
+
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #000000; /* Define a cor do texto */
+  height: 100%; /* Define a altura do swiper-slide */
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.swiper-slide p {
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 18px; /* Ajuste o tamanho do texto conforme necessário */
+  font-weight: bold;
+  margin: 0; /* Remove as margens padrão do parágrafo */
+}
+
 body {
     font-family: Arial, sans-serif;
   }
@@ -344,4 +397,14 @@ body {
 
   .btn#button-create {
     width: calc(100% - 139px);
+  }
+
+  /* MODA MASCULINA */
+
+  .zoom-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .zoom-image:hover {
+    transform: scale(1.1);
   }
