@@ -46,7 +46,7 @@
               <a href="#">baixe nosso app</a>
             </div>
             <div class="col text-center">
-              <h1>STYLE HUB</h1>
+              <a href="index.html" style="color:black; text-decoration: none;"><h1>STYLE HUB</h1></a>
               <br>
               <br>
               <br>
@@ -227,9 +227,9 @@
                 <div class="form-group">
                   <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha">
                 </div>
+                <p class="align-center"><a class="forgot-pass" href="#">Esqueci minha senha</a></p>
+                <button type="submit" class="btn btn-primary" style="margin: auto; display: block;">Entrar</button>
               </form>
-              <p class="align-center"><a class="forgot-pass" href="#">Esqueci minha senha</a></p>
-              <button type="submit" class="btn btn-primary">Entrar</button>
               <p class="align-center-2">Não tem um cadastro?</p>
               <button href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal" type="button" class="btn btn-secondary">Crie sua conta</button>
     
@@ -258,14 +258,115 @@
               <div class="form-group">
                 <input type="password" class="form-control" id="signupPassword" style="width: calc(100% - 139px); margin: auto; display: block; border-radius: 10px; margin-bottom: 15.6px;" placeholder="Senha">
               </div>
+              <button type="submit" class="btn btn-primary" id="button-create" style="width: calc(100% - 139px); margin: auto; display: block; ">Criar conta</button>
             </form>
-            <button type="submit" class="btn btn-primary" id="button-create" style="width: calc(100% - 139px);">Criar conta</button>
             <p class="footer-center" style="margin-bottom: 43px;">Já possui uma conta? <a class="footer-center" href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Faça login</a></p>
         </div>
       </div>
     </div>
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"> 
+      <div class="modal-dialog" role="document">
+        <div class="modal-content custom-modal-content">
+          <h5 class="modal-title custom-h5">Conta criada com sucesso</h5>
+          <button href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal" type="button" class="btn btn-secondary custom-button">Fazer login</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector('#form-cadastro');
+        form.addEventListener('submit', (event) => {
+          event.preventDefault(); // previne o envio padrão do formulário
     
+          const email = document.getElementById('signupEmail').value;
+          const senha = document.getElementById('signupPassword').value;
+          const nome = document.getElementById('signupFirstName').value;
+          const sobrenome = document.getElementById('signupLastName').value;
+          
+          const data = {
+            "Nome": nome,
+            "Sobrenome": sobrenome,
+            "Email": email,
+            "Senha": senha
+          };
+          console.log(data);
     
+          fetch('http://localhost:3308/cliente/cadastro', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (response.ok) {
+              alert('Cliente cadastrado com sucesso!');
+              form.reset();
+              $('#signupModal').modal('hide');
+              $('#messageModal').modal('show');
+            } else {
+              throw new Error('Erro ao cadastrar cliente!');
+            }
+          })
+          .catch(error => console.error(error));
+        });
+    
+    </script>
+    <script>
+      const form2 = document.querySelector('#form-login');
+        form2.addEventListener('submit', (event) => {
+          event.preventDefault(); // previne o envio padrão do formulário
+    
+          const email = document.getElementById('loginEmail').value;
+          const senha = document.getElementById('loginPassword').value;
+          
+          const data = {
+            "Email": email,
+            "Senha": senha
+          };
+          console.log(data);
+    
+          fetch('http://localhost:3308/cliente/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (response.ok) {
+              alert('Autenticado com sucesso!');
+              form.reset();
+              $('#signupModal').modal('hide');
+              fetch(`http://localhost:3308/cliente/${email}`, {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+              })
+              .then(response => {
+                if (response.ok) {
+                  const values = Object.values(data);
+                  const primeiroNome = data[0].Nome;
+                  console.log("teste ", primeiroNome);
+                  const loginLink = document.getElementById('loginLink');
+                  loginLink.textContent = `Olá, ${primeiroNome}`;
+                } else {
+                  throw new Error('Erro ao buscar informações do usuário!');
+                }
+              })
+              .then(data => {
+                const primeiroNome = data.primeiroNome; // Supondo que o primeiro nome seja retornado como 'primeiroNome'
+                const loginLink = document.getElementById('loginLink');
+                loginLink.textContent = `Olá, ${primeiroNome}`;
+              })
+              .catch(error => console.error(error));
+            } else {
+              throw new Error('Erro ao autenticar!');
+            }
+          })
+          .catch(error => console.error(error));
+        });
+    </script>
       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script src="script.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

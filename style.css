@@ -399,6 +399,29 @@ body {
     width: calc(100% - 139px);
   }
 
+  /* MESSAGE MODAL */
+
+  .custom-modal-content {
+    background-color: white;
+  }
+  
+  .custom-h5 {
+    font-family: 'Medula One', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .custom-button {
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+  }
+
   /* MODA MASCULINA */
 
   .zoom-image {
