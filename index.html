@@ -231,7 +231,7 @@
             <div class="form-group">
               <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha">
             </div>
-            <p class="align-center"><a class="forgot-pass" href="working.html">Esqueci minha senha</a></p>
+            <p class="align-center"><a class="forgot-pass" href="#">Esqueci minha senha</a></p>
             <button type="submit" class="btn btn-primary" style="margin: auto; display: block;">Entrar</button>
           </form>
           <p class="align-center-2">Não tem um cadastro?</p>
@@ -323,53 +323,71 @@
       const email = document.getElementById('loginEmail').value;
       const senha = document.getElementById('loginPassword').value;
       
-      const data = {
+      const login = {
         "Email": email,
 	      "Senha": senha
       };
-      console.log(data);
+      console.log(login);
 
       fetch('http://localhost:3308/cliente/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(login)
       })
-      .then(response => {
-        if (response.ok) {
-          alert('Autenticado com sucesso!');
-          form.reset();
-          $('#signupModal').modal('hide');
-          fetch(`http://localhost:3308/cliente/${email}`, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          })
-          .then(response => {
-            if (response.ok) {
-              const values = Object.values(data);
-              const primeiroNome = data[0].Nome;
-              console.log("teste ", primeiroNome);
-              const loginLink = document.getElementById('loginLink');
-              loginLink.textContent = `Olá, ${primeiroNome}`;
-            } else {
-              throw new Error('Erro ao buscar informações do usuário!');
-            }
-          })
-          .then(data => {
-            const primeiroNome = data.primeiroNome; // Supondo que o primeiro nome seja retornado como 'primeiroNome'
-            const loginLink = document.getElementById('loginLink');
-            loginLink.textContent = `Olá, ${primeiroNome}`;
-          })
-          .catch(error => console.error(error));
+      .then((response) => {
+        if(response.ok){
+          return response.json();
         } else {
-          throw new Error('Erro ao autenticar!');
+          alert('Falha na autenticação!');
+          throw new Error('Falha na autenticação');
         }
       })
-      .catch(error => console.error(error));
+      .then((data) => {
+        if (Array.isArray(data)){
+          data.forEach((nome) =>{
+            const primeiroNome = data.Nome;
+            const userLink = document.getElementById('user-link');
+            userLink.textContent = `Olá, ${primeiroNome}`;
+          })
+        } else {
+          const values = Object.values(data);
+          values.forEach((nome) =>{
+            console.log(nome);
+            const primeiroNome = nome;
+            localStorage.setItem('nome', primeiroNome);
+            $('#loginModal').modal('hide');
+            location.reload();
+          })
+        }
+      })
     });
+</script>
+<script>
+  function atualizarBotaoLogin() {
+    const nomeUsuario = localStorage.getItem('nome');
+    const botaoLogin = document.getElementById('user-link');
+  
+    if (nomeUsuario) {
+      // Se o nome do usuário estiver armazenado, exiba o texto "Olá, 'nome do usuário'"
+      botaoLogin.textContent = `Olá, ${nomeUsuario}`;
+  
+      // Remova os atributos "data-toggle" e "data-target" para evitar que o modal seja aberto
+      botaoLogin.removeAttribute('data-toggle');
+      botaoLogin.removeAttribute('data-target');
+    } else {
+      // Se o nome do usuário não estiver armazenado, exiba o texto "Entre ou cadastre-se"
+      botaoLogin.textContent = 'Entre ou cadastre-se';
+  
+      // Restaure os atributos "data-toggle" e "data-target" para que o modal seja aberto ao clicar no botão
+      botaoLogin.setAttribute('data-toggle', 'modal');
+      botaoLogin.setAttribute('data-target', '#loginModal');
+    }
+  }
+  
+  // Chame a função para atualizar o botão de login quando a página for carregada
+  window.addEventListener('DOMContentLoaded', atualizarBotaoLogin);
 </script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>

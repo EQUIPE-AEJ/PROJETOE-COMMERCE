@@ -53,7 +53,7 @@
             </div>
             <div class="col text-right">
               <span class="material-symbols-outlined">person</span>          
-              <a href="#" data-toggle="modal" data-target="#loginModal">Entre ou cadastre-se</a>
+              <a id="user-link" href="#" data-toggle="modal" data-target="#loginModal">Entre ou cadastre-se</a>
               <span class="material-symbols-outlined">favorite</span>
               <span class="material-symbols-outlined">shopping_bag</span>
               <br>
@@ -92,7 +92,7 @@
                     <p>Total: <span class="item-total-price">R$ 99,00</span></p>
                     <br>
                     <button class="btn btn-primary add-to-cart">adicionar à sacola</button>
-                    <button class="btn btn-primary buy" style="width: calc(60% - 139px); margin: auto;  border-radius: 10px; background-color: #387337;">comprar</button>
+                    <button id="buyButton" type="button" class="btn btn-primary buy" style="width: calc(60% - 139px); margin: auto;  border-radius: 10px; background-color: #387337;">comprar</button>
                 </div>
             </div>
         </div>
@@ -413,6 +413,14 @@
 </div>
 </div>
 </div>
+<div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog" role="document">
+    <div class="modal-content custom-modal-content">
+      <h5 class="modal-title custom-h5">Teste</h5>
+      <button href="#" data-dismiss="modal" data-toggle="modal" data-target="#" type="button" class="btn btn-secondary ok-button" style="margin-top: 20px">Ok</button>
+    </div>
+  </div>
+</div>
 <script>
 const form = document.querySelector('#form-cadastro');
 form.addEventListener('submit', (event) => {
@@ -453,60 +461,71 @@ if (response.ok) {
 
 </script>
 <script>
-const form2 = document.querySelector('#form-login');
-form2.addEventListener('submit', (event) => {
-event.preventDefault(); // previne o envio padrão do formulário
+  const form2 = document.querySelector('#form-login');
+    form2.addEventListener('submit', (event) => {
+      event.preventDefault(); // previne o envio padrão do formulário
 
-const email = document.getElementById('loginEmail').value;
-const senha = document.getElementById('loginPassword').value;
+      const email = document.getElementById('loginEmail').value;
+      const senha = document.getElementById('loginPassword').value;
+      
+      const login = {
+        "Email": email,
+	      "Senha": senha
+      };
+      console.log(login);
 
-const data = {
-"Email": email,
-"Senha": senha
-};
-console.log(data);
-
-fetch('http://localhost:3308/cliente/login', {
-method: 'POST',
-headers: {
-  'Content-Type': 'application/json'
-},
-body: JSON.stringify(data)
-})
-.then(response => {
-if (response.ok) {
-  alert('Autenticado com sucesso!');
-  form.reset();
-  $('#signupModal').modal('hide');
-  fetch(`http://localhost:3308/cliente/${email}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  .then(response => {
-    if (response.ok) {
-      const values = Object.values(data);
-      const primeiroNome = data[0].Nome;
-      console.log("teste ", primeiroNome);
-      const loginLink = document.getElementById('loginLink');
-      loginLink.textContent = `Olá, ${primeiroNome}`;
+      fetch('http://localhost:3308/cliente/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(login)
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (Array.isArray(data)){
+          data.forEach((nome) =>{
+            const primeiroNome = data.Nome;
+            const userLink = document.getElementById('user-link');
+            userLink.textContent = `Olá, ${primeiroNome}`;
+          })
+        } else {
+          const values = Object.values(data);
+          values.forEach((nome) =>{
+            console.log(nome);
+            const primeiroNome = nome;
+            localStorage.setItem('nome', primeiroNome);
+            $('#loginModal').modal('hide');
+            location.reload();
+          })
+        }
+      })
+    });
+</script>
+<script>
+  function atualizarBotaoLogin() {
+    const nomeUsuario = localStorage.getItem('nome');
+    const botaoLogin = document.getElementById('user-link');
+  
+    if (nomeUsuario) {
+      // Se o nome do usuário estiver armazenado, exiba o texto "Olá, 'nome do usuário'"
+      botaoLogin.textContent = `Olá, ${nomeUsuario}`;
+  
+      // Remova os atributos "data-toggle" e "data-target" para evitar que o modal seja aberto
+      botaoLogin.removeAttribute('data-toggle');
+      botaoLogin.removeAttribute('data-target');
     } else {
-      throw new Error('Erro ao buscar informações do usuário!');
+      // Se o nome do usuário não estiver armazenado, exiba o texto "Entre ou cadastre-se"
+      botaoLogin.textContent = 'Entre ou cadastre-se';
+  
+      // Restaure os atributos "data-toggle" e "data-target" para que o modal seja aberto ao clicar no botão
+      botaoLogin.setAttribute('data-toggle', 'modal');
+      botaoLogin.setAttribute('data-target', '#loginModal');
     }
-  })
-  .then(data => {
-    const primeiroNome = data.primeiroNome; // Supondo que o primeiro nome seja retornado como 'primeiroNome'
-    const loginLink = document.getElementById('loginLink');
-    loginLink.textContent = `Olá, ${primeiroNome}`;
-  })
-  .catch(error => console.error(error));
-} else {
-  throw new Error('Erro ao autenticar!');
-}
-})
-.catch(error => console.error(error));
-});
+  }
+  
+  // Chame a função para atualizar o botão de login quando a página for carregada
+  window.addEventListener('DOMContentLoaded', atualizarBotaoLogin);
 </script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="script.js"></script>

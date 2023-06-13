@@ -60,19 +60,29 @@ quantityInput.addEventListener("change", () => {
 });
 
 const addToCartButton = document.querySelector(".add-to-cart");
+const carrinhoModal = document.querySelector("#carrinhoModal");
+const carrinhoModalTitle = document.querySelector("#carrinhoModal .modal-title");
+const carrinhoModalButton = document.querySelector("#carrinhoModal .ok-button");
 
 addToCartButton.addEventListener("click", () => {
   const quantity = quantityInput.value;
-  alert(`Adicionado ao carrinho: ${quantity}x Camisa Cinza em Algodão`);
+  const message = `Adicionado ao carrinho: ${quantity}x Camisa Cinza em Algodão`;
+
+  carrinhoModalTitle.textContent = message;
+  carrinhoModalButton.setAttribute("data-target", "#carrinhoModal");
+  carrinhoModalButton.click();
 });
 
-const buyButton = document.querySelector(".buy");
+const buyButton = document.querySelector("#buyButton");
 
 buyButton.addEventListener("click", () => {
   const quantity = quantityInput.value;
-  alert(`Compra realizada: ${quantity}x Camisa Cinza em Algodão`);
-});
+  const message = `Compra realizada: ${quantity}x Camisa Cinza em Algodão`;
 
+  carrinhoModalTitle.textContent = message;
+  carrinhoModalButton.setAttribute("data-target", "#carrinhoModal");
+  carrinhoModalButton.click();
+});
 
  
   
