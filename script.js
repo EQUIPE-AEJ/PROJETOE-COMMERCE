@@ -49,6 +49,30 @@ var swiper = new Swiper('.swiper-container', {
   }
 });
 
+const quantityInput = document.querySelector(".item-quantity");
+const totalPrice = document.querySelector(".item-total-price");
+
+quantityInput.addEventListener("change", () => {
+  const quantity = quantityInput.value;
+  const price = 99; // preço do item
+  const total = price * quantity;
+  totalPrice.textContent = `R$ ${total.toFixed(2)}`;
+});
+
+const addToCartButton = document.querySelector(".add-to-cart");
+
+addToCartButton.addEventListener("click", () => {
+  const quantity = quantityInput.value;
+  alert(`Adicionado ao carrinho: ${quantity}x Camisa Cinza em Algodão`);
+});
+
+const buyButton = document.querySelector(".buy");
+
+buyButton.addEventListener("click", () => {
+  const quantity = quantityInput.value;
+  alert(`Compra realizada: ${quantity}x Camisa Cinza em Algodão`);
+});
+
 
  
   

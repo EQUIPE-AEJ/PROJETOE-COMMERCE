@@ -13,27 +13,27 @@
 }
 
 .swiper-slide:nth-child(1) {
-  background-color: #B39EB5; /* Cor pastel 1 */
+  background-color: #B39EB5;
 }
 
 .swiper-slide:nth-child(2) {
-  background-color: #F0A6CA; /* Cor pastel 2 */
+  background-color: #F0A6CA;
 }
 
 .swiper-slide:nth-child(3) {
-  background-color: #FFCF9C; /* Cor pastel 3 */
+  background-color: #FFCF9C;
 }
 
 .swiper-slide:nth-child(4) {
-  background-color: #B2D8D8; /* Cor pastel 4 */
+  background-color: #B2D8D8;
 }
 
 .swiper-slide:nth-child(5) {
-  background-color: #C6C4A2; /* Cor pastel 5 */
+  background-color: #C6C4A2;
 }
 
 .swiper-slide:nth-child(6) {
-  background-color: #C1F8E0; /* Cor pastel 6 */
+  background-color: #C1F8E0;
 }
 
 
@@ -42,16 +42,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #000000; /* Define a cor do texto */
-  height: 100%; /* Define a altura do swiper-slide */
-  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  color: #000000;
+  height: 100%;
+  text-align: center;
 }
 
 .swiper-slide p {
   font-family: 'Alumni Sans', sans-serif;
-  font-size: 18px; /* Ajuste o tamanho do texto conforme necessário */
+  font-size: 18px;
   font-weight: bold;
-  margin: 0; /* Remove as margens padrão do parágrafo */
+  margin: 0;
 }
 
 body {
@@ -221,7 +221,6 @@ body {
     font-family: "Arial", sans-serif;
     margin: 0;
     padding: 10px;
-    /* Adicione outros estilos de fonte conforme necessário */
   }
 
   .modal-dialog {
@@ -234,7 +233,6 @@ body {
     width: 80%;
     margin: 0 auto;
     border-radius: 10px;
-    /* Ajuste a largura conforme necessário */
   }
 
   .modal-title {
@@ -319,8 +317,6 @@ body {
     text-align: center;
     border: none;
     border-radius: 10px;
-
-    /* Ajuste a largura conforme necessário */
   }
   
   .mt-2 {
@@ -339,7 +335,6 @@ body {
     letter-spacing: 0em;
     text-align: center;
     border-radius: 10px;
-    /* Ajuste a largura conforme necessário */
   }
 
   .btn-secondary:hover {
@@ -431,3 +426,74 @@ body {
   .zoom-image:hover {
     transform: scale(1.1);
   }
+
+  .item-title {
+    font-family: 'Alumni Sans', sans-serif;
+    margin-top: 18px;
+    font-size: 22px;
+  }
+
+  .item-price {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* comprar peça */
+
+.item-title-buy .item-description .item-price-buy .item-size-buy .item-quantity .item-total-price {
+  margin-bottom: 40px;
+}
+
+.item-title-buy {
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: bold;
+}
+
+.item-description {
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 18px;
+}
+
+#image-buy {
+  margin-top: 8px;
+}
+
+.add-to-cart {
+  width: calc(60% - 139px); 
+  margin: auto;  
+  border-radius: 10px;"
+}
+
+/* carousel de imagens */
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-item h5 {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.carousel-item p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: black;
+  top: -500px;
+  margin: -7%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
